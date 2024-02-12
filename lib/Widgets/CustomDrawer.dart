@@ -69,7 +69,7 @@ Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SplashS
             title: Text("Rate Us" , style: TextStyle(fontSize: 18),),
             leading: Icon(Icons.star , size: 25,),
             onTap: () async{
-              await launchUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.dhruv.aiem"));
+              await launchUrl(Uri.parse("https://play.google.com/store/apps/dev?id=5340688481594363532"));
             },
           ),
 
@@ -79,7 +79,7 @@ Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SplashS
             onTap: () async{
 
               // https://sites.google.com/view/yogaforbeginners-indianyoga/privacy-policy
-              await launchUrl(Uri.parse("https://sites.google.com/view/yogaforbeginners-indianyoga/privacy-policy"));
+              await launchUrl(Uri.parse("https://doc-hosting.flycricket.io/isro-app/9d79020c-0c05-435d-85b2-5f32d300cb6b/privacy"));
 
             },
           ),
