@@ -25,7 +25,7 @@ class CustomDrawer extends StatelessWidget {
         children: [
           Container(
             height: 200,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 fit:  BoxFit.cover,
                 image: NetworkImage("https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")
@@ -33,28 +33,28 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text("Reset Progress" , style: TextStyle(fontSize: 18),),
-            leading: Icon(Icons.restart_alt_sharp , size: 25,),
+            title: const Text("Reset Progress" , style: TextStyle(fontSize: 18),),
+            leading: const Icon(Icons.restart_alt_sharp , size: 25,),
             onTap: (){
               showDialog(
                   context: context,
                   builder: (_) => AlertDialog(
-                    title: Text('RESET PROGRESS'),
+                    title: const Text('RESET PROGRESS'),
                     actionsAlignment: MainAxisAlignment.center,
-                    actionsPadding: EdgeInsets.symmetric(vertical: 15 , horizontal: 10),
-                    content: Text('This will reset all of your fitness data including Total Workout Time, Streak and Burned Calories. The action cannot be revert once done.'),
+                    actionsPadding: const EdgeInsets.symmetric(vertical: 15 , horizontal: 10),
+                    content: const Text('This will reset all of your fitness data including Total Workout Time, Streak and Burned Calories. The action cannot be revert once done.'),
                     actions: [
                       ElevatedButton(onPressed: (){
                         Navigator.pop(context);
-                      }, child: Text("Cancel" , style: TextStyle(fontSize: 20),) ,style: ButtonStyle(padding: MaterialStateProperty.all<EdgeInsets>(
-                          EdgeInsets.symmetric(vertical: 18 , horizontal: 35))),),
+                      },style: ButtonStyle(padding: MaterialStateProperty.all<EdgeInsets>(
+                          const EdgeInsets.symmetric(vertical: 18 , horizontal: 35))), child: const Text("Cancel" , style: TextStyle(fontSize: 20),) ,),
                       ElevatedButton(onPressed: () async{
-await LocalDB.setWorkOutTime(0);
-await LocalDB.setkcal(0);
-await LocalDB.setStreak(0);
-Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
-                      }, child: Text("Reset" , style: TextStyle(fontSize: 20),) ,style: ButtonStyle(padding: MaterialStateProperty.all<EdgeInsets>(
-                          EdgeInsets.symmetric(vertical: 18 , horizontal: 35))),)
+                    await LocalDB.setWorkOutTime(0);
+                    await LocalDB.setkcal(0);
+                    await LocalDB.setStreak(0);
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
+                      },style: ButtonStyle(padding: MaterialStateProperty.all<EdgeInsets>(
+                          const EdgeInsets.symmetric(vertical: 18 , horizontal: 35))), child: Text("Reset" , style: TextStyle(fontSize: 20),) ,)
                     ],
                   )
               );
